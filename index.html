@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K8MLKE6RX1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-K8MLKE6RX1');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roaf Htun</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://avatars.githubusercontent.com/roafhtun" type="image/x-icon" />
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Core theme CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"
+        integrity="sha512-3WGIRFCuTpZhqYujwLp5RtARPkOy3uRtc3RXB31bJ9/i6VH2C66Z0WBV6gHhdhbUIDKFx8yTkLfEjdQM5Wl+ZQ=="
+        crossorigin="anonymous"></script>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            const userLang = navigator.language || navigator.userLanguage;
+            const lang = userLang.startsWith('es') ? 'es' : 'en';
+        
+            fetch(`translations/${lang}.json`)
+              .then(response => response.json())
+              .then(data => {
+                console.log('Data received:', data);
+        
+                document.getElementById('writingTextLink').src = data.writingTextLink || '';
+                document.getElementById('codeSection').textContent = data.codeSection || '';
+                document.getElementById('contactSection').textContent = data.contactSection || '';
+                document.getElementById('socialSection').textContent = data.socialSection || '';
+                document.getElementById('githubUsername').textContent = data.githubUsername || '';
+                document.getElementById('sketchfabUsername').textContent = data.sketchfabUsername || '';
+                document.getElementById('portafolioUsername').textContent = data.portafolioUsername || '';
+                document.getElementById('twitchUsername').textContent = data.twitchUsername || '';
+                document.getElementById('discordUsername').textContent = data.discordUsername || '';
+                document.getElementById('youtubeUsername').textContent = data.youtubeUsername || '';
+                document.getElementById('linkedinUsername').textContent = data.linkedinUsername || '';
+              })
+              .catch(error => {
+                console.error('Error fetching or parsing translations:', error);
+              });
+          });
+        </script>
+        
+  </head>
+
+  <body class="hideScroll">
+    <!-- Animación de fondo parallax -->
+    <section class="animated-background">
+      <div id="stars1"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </section>
+    <!-- Fin de la animación de fondo parallax -->
+
+    <section class="type-pong">
+        <div class="racket left"></div>
+        <div class="racket right"></div>
+        <div class="ball">Roaf</div>
+        <div class="divider"></div>
+        <a id="profilePicture" href="#popup">
+          <img src="https://avatars.githubusercontent.com/roafhtun" alt="Profile Picture">
+        </a>
+  </section>
+
+    <div class="overlay" id="popup">
+      <div class="popup">
+        <div class="popup-photo">
+          <a href="https://avatars.githubusercontent.com/roafhtun" target="_blank">
+            <img src="https://avatars.githubusercontent.com/roafhtun" alt="Profile Picture">
+          </a>
+        </div>
+<!--         <div class="popup-quote">
+          Comedy = Tragedy + Time.
+        </div> -->
+        <a class="popup-close" onclick="history.back()">&times;</a>
+      </div>
+    </div>
+
+    <img class="writingText" id="writingTextLink" />
+    
+    <section class="links">
+      <h3 id="codeSection">
+        <hr />
+      </h3>
+      <a href="https://github.com/roafhtun" target="_blank">
+        <div class="icon"><i class="fab fa-github"></i></div>
+        Github
+        <span class="u-name" id="githubUsername"></span>
+      <a href="https://roafhtun.com" target="_blank">
+        <div class="icon"><i class="fa fa-paperclip"></i></div>
+        Portfolio
+        <span class="u-name" id="portafolioUsername"></span>
+      </a>
+      <h3 id="contactSection">
+        <hr />
+      </h3>
+      <a href="https://www.linkedin.com/in/zaw-htun/" target="_blank">
+        <div class="icon"><i class="fa fa-linkedin"></i></div>
+        LinkedIn
+        <span class="u-name" id="linkedinUsername"></span>
+      </a>
+      <a onclick="copyToClipboard('roafhtun@gmail.com', 'email', 'fa fa-envelope', ' E-mail')" 
+      id="email">
+        <div class="icon"><i class="fa fa-envelope"></i></div>
+        E-mail
+        <span class="u-name">roafhtun@gmail.com</span>
+      </a>
+    </section>
+    <div class="cursor"></div>
+    
+    <script  src="linksScripts.js"></script>
+  </body>
+  <footer>
+  <p class="footerText">© Roaf Htun 2024</p>
+
+</footer>
+</html>
